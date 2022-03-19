@@ -4,6 +4,8 @@ services:
   traefik:
     image: "traefik:v2.5"
     container_name: "traefik"
+    networks:
+      - traefik
     ports:
       - "80:80"
       - "443:443"
@@ -13,3 +15,7 @@ services:
       - ./etc:/etc/traefik
       - ./log:/var/log/traefik
       - /var/run/docker.sock:/var/run/docker.sock:ro
+
+networks:
+  traefik:
+    name: traefik
