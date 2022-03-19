@@ -6,5 +6,6 @@ A basic traefik setup
 
 1. clone repo
 2. create directory `./etc/`
-3. copy `traefik.yml` to `./etc/traefik.yml` and adjust configuration
-4. start traefik with `docker-compose up -d`
+3. copy `traefik.example.yml` to `./etc/traefik.yml` and adjust configuration
+4. copy `dynamic.example.yml` to `./etc/dynamic.yml` and adjust configuration
+5. start traefik with `docker-compose up -d`
