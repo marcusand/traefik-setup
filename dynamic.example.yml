@@ -1,0 +1,19 @@
+# http routing section
+http:
+  routers:
+    # Define a connection between requests and services
+    to-service:
+      rule:
+        "PathPrefix(`/`)"
+        # If the rule matches, applies the middleware
+      # If the rule matches, forward to the whoami service (declared below)
+      service: my-service
+
+  middlewares:
+
+  services:
+    # Define how to reach an existing service on our infrastructure
+    my-service:
+      loadBalancer:
+        servers:
+          - url: http://host.docker.internal:8055/
