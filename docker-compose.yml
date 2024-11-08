@@ -15,6 +15,7 @@ services:
       - ./etc:/etc/traefik
       - ./log:/var/log/traefik
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    restart: unless-stopped
 
 networks:
   traefik:
